@@ -8,11 +8,7 @@ export default class SectionIndexPage extends React.Component {
     return (
       <Layout>
         <section className="section">
-          <div className="container">
-            <div className="content">
               <SectionRoll />
-            </div>
-          </div>
         </section>
       </Layout>
     )

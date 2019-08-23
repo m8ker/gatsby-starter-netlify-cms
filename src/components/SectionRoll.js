@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { graphql, StaticQuery } from 'gatsby'
+//import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class SectionRoll extends React.Component {
   render() {
@@ -9,37 +9,35 @@ class SectionRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <div className="is-parent column is-12" key={post.id}>
-              <article
-                className={`section-list-item tile is-child box notification`}
-              >
-                <header>
-                  {/* {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${
-                            post.title
-                          }`,
-                        }}
-                      />
-                    </div>
-                  ) : null} */}
-                  <h1  className="section-heading">
-                      {post.frontmatter.title}
-                  </h1>
-                </header>
-                <p>
-                <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                </p>
-              </article>
-            </div>
-          ))}
-      </div>
+          <div className="content">
+            {posts &&
+              posts.map(({ node: post }) => (
+                <div className="" key={post.id}>
+                  <article className="section-article">
+                    <header>
+                      {/* {post.frontmatter.featuredimage ? (
+                        <div className="featured-thumbnail">
+                          <PreviewCompatibleImage
+                            imageInfo={{
+                              image: post.frontmatter.featuredimage,
+                              alt: `featured image thumbnail for post ${
+                                post.title
+                              }`,
+                            }}
+                          />
+                        </div>
+                      ) : null}  */}
+                      <h1  className="section-heading">
+                        <div className="container">{post.frontmatter.title}</div>
+                      </h1>
+                    </header>
+
+                    <div className={`container`} dangerouslySetInnerHTML={{ __html: post.html }} />
+
+                  </article>
+                </div>
+              ))}
+          </div>
     )
   }
 }
@@ -72,13 +70,6 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
               }
             }
           }
