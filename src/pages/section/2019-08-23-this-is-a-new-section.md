@@ -3,7 +3,6 @@ templateKey: section-post
 title: This is a new section
 date: 2019-08-23T17:03:46.143Z
 description: A new beginning
-featuredpost: false
 featuredimage: /img/14_replacement-section-rev2_t.jpg
 tags:
   - grapes
