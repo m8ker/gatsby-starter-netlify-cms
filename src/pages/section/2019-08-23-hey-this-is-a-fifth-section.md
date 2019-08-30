@@ -9,4 +9,4 @@ This is another section. This is what it is going to look like.
 
 ![](/img/coffee.png)
 
-and some more text
+and some more text and some more
